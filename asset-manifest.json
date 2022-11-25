@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/phonebook-typescript/static/css/main.e6c13ad2.css",
+    "main.js": "/phonebook-typescript/static/js/main.eb7cceb8.js",
+    "static/js/787.6d057671.chunk.js": "/phonebook-typescript/static/js/787.6d057671.chunk.js",
+    "index.html": "/phonebook-typescript/index.html",
+    "main.e6c13ad2.css.map": "/phonebook-typescript/static/css/main.e6c13ad2.css.map",
+    "main.eb7cceb8.js.map": "/phonebook-typescript/static/js/main.eb7cceb8.js.map",
+    "787.6d057671.chunk.js.map": "/phonebook-typescript/static/js/787.6d057671.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.eb7cceb8.js"
+  ]
+}
