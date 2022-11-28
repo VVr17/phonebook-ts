@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { toast, ToastContainer } from 'react-toastify';
-import { AppBar } from 'components/AppBar/AppBar';
 import { Box } from 'components/Box/Box';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
@@ -59,7 +58,6 @@ export const App: React.FC = () => {
 
   return (
     <div>
-      <AppBar />
       <Box as="main" bg="mainBackgroundColor">
         <Section title="Create new contact">
           <NewContactForm onFormSubmit={addContact} contacts={contacts} />
