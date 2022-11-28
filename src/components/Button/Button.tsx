@@ -4,7 +4,7 @@ import { ButtonStyled } from './Button.styled';
 interface IProps {
   type?: 'button' | 'submit' | 'reset';
   name?: string;
-  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   children?: React.ReactNode;
 }
 

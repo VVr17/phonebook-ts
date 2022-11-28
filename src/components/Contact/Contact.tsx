@@ -5,7 +5,7 @@ import { ContactStyled } from './Contact.styled';
 interface IProps {
   name: string;
   number: string;
-  onDelete: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onDelete: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Contact: React.FC<IProps> = ({ name, number, onDelete }) => (

@@ -1,6 +1,6 @@
-import { IContact } from 'constants/interface';
 import { Contact } from '../Contact/Contact';
 import { Contacts } from './ContactList.styled';
+import { IContact } from 'types/contacts';
 
 interface IProps {
   contacts: IContact[];

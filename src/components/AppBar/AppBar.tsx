@@ -1,8 +1,6 @@
-// import { Header } from './AppBar.styled';
-import { Navigation } from 'components/Navigation/Navigation';
-// import { Container } from 'components/Container/Container';
 import { Box } from 'components/Box/Box';
 import { Container } from './AppBar.styled';
+import { Navigation } from 'components/Navigation/Navigation';
 
 export const AppBar = () => {
   return (

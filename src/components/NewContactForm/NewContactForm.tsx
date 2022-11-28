@@ -4,7 +4,7 @@ import * as yup from 'yup'; // Form validation
 import { toast } from 'react-toastify'; // Notifications
 import { Button } from 'components/Button/Button';
 import { Input } from './Input/Input';
-import { IContact } from 'constants/interface';
+import { IContact } from 'types/contacts';
 
 const INITIAL_STATE = {
   name: '',
@@ -37,7 +37,7 @@ interface FormValues {
 
 interface IProps {
   contacts: IContact[];
-  onFormSubmit: ({ name, number }: { name: string; number: string }) => void;
+  onFormSubmit: (data: Omit<IContact, 'id'>) => void;
 }
 
 export const NewContactForm: React.FC<IProps> = ({
