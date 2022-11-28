@@ -1,18 +1,15 @@
-// import PropTypes from 'prop-types';
-// import { FilterLabelStyled } from './Filter.styled';
+import { FilterLabelStyled } from './Filter.styled';
 
-// props = { value, onChange }
-export const Filter = () => {
+interface IProps {
+  value: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+}
+
+export const Filter: React.FC<IProps> = ({ value, onChange }) => {
   return (
-    <div>Filter</div>
-    // <FilterLabelStyled>
-    //   Find contacts by name
-    //   <input type="text" value={value} onChange={onChange} />
-    // </FilterLabelStyled>
+    <FilterLabelStyled>
+      Find contacts by name
+      <input type="text" value={value} onChange={onChange} />
+    </FilterLabelStyled>
   );
 };
-
-// Filter.propTypes = {
-//   value: PropTypes.string,
-//   onChange: PropTypes.func.isRequired,
-// };

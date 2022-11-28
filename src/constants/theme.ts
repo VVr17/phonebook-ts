@@ -21,7 +21,7 @@ declare module '@emotion/react' {
       xl: string;
     };
 
-    breakpoints: Readonly<[`480px`, `768px`, `1280px`]>;
+    breakpoints: string[];
 
     borders: {
       none: 'none';
@@ -31,8 +31,8 @@ declare module '@emotion/react' {
 
     radii: {
       none: '0';
-      normal: string;
       round: '50%';
+      normal: string;
       custom?: string;
     };
 

@@ -14,7 +14,12 @@ export const LabelStyled = styled.label`
   }
 `;
 
-export const InputStyled = styled.input`
+type inputProps = {
+  backgroundColor: 'bgErrorColor' | '';
+  border: string;
+};
+
+export const InputStyled = styled.input<inputProps>`
   margin-top: ${p => p.theme.space[1]}px;
   padding: ${p => p.theme.space[2]}px;
   outline: transparent;

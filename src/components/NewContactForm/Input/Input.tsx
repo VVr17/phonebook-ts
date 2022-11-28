@@ -1,7 +1,30 @@
-import PropTypes from 'prop-types';
+import {
+  Ref,
+  MultipleFieldErrors,
+  Message,
+  UseFormRegister,
+} from 'react-hook-form'; // Forms
 import { LabelStyled, ErrorText, InputStyled } from './Input.styled';
 
-export const Input = ({
+export type FieldError = {
+  type: string;
+  ref?: Ref;
+  types?: MultipleFieldErrors;
+  message?: Message;
+};
+
+interface IProps {
+  type?: string;
+  name: 'number' | 'name';
+  placeholder?: string;
+  register: UseFormRegister<{
+    name: string;
+    number: string;
+  }>;
+  error: FieldError | undefined;
+}
+
+export const Input: React.FC<IProps> = ({
   type = 'text',
   name,
   placeholder,
@@ -23,23 +46,3 @@ export const Input = ({
     </LabelStyled>
   );
 };
-
-Input.propTypes = {
-  type: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
-  error: PropTypes.object,
-  register: PropTypes.func,
-};
-
-//<input type="text" {...register('name'), {
-//    required: 'Name is required',
-//    minLength: {
-//      value: 4,
-//      message: 'Name should be at least 4 characters',
-//    },
-//    maxLength: {
-//      value: 20,
-//      message: 'Name should be at most 40 characters',
-//    },
-// }} />

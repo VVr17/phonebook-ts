@@ -1,21 +1,25 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
-export const ButtonStyled = styled.button`
+export const LinkStyled = styled(Link)`
+  display: inline-block;
   padding: ${p => p.theme.space[2]}px ${p => p.theme.space[3]}px;
-  min-width: ${p => p.theme.space[6]}px;
+  min-width: 120px;
+  max-width: 180px;
+  text-align: center;
   min-height: ${p => p.theme.space[4]}px;
-
   font-size: ${p => p.theme.fontSizes.xs};
   font-weight: ${p => p.theme.fontWeight.bold};
   text-transform: uppercase;
   cursor: pointer;
+  text-decoration: none;
   border: ${p => p.theme.borders.normal} ${p => p.theme.colors.secondaryColor};
   background-color: ${p =>
-    p.name === 'primary' ? p.theme.colors.secondaryColor : 'transparent'};
+    p.name === 'lightMode' ? 'transparent' : p.theme.colors.secondaryColor};
   color: ${p =>
-    p.name === 'primary'
-      ? p.theme.colors.secondaryTextColor
-      : p.theme.colors.secondaryColor};
+    p.name === 'lightMode'
+      ? p.theme.colors.secondaryColor
+      : p.theme.colors.secondaryTextColor};
   border-radius: ${p => p.theme.radii.normal};
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -29,9 +33,5 @@ export const ButtonStyled = styled.button`
     border-color: ${p => p.theme.colors.accentBackgroundColor};
     color: ${p => p.theme.colors.accent};
     box-shadow: 0px 4px 4px ${p => p.theme.colors.btnShadowColor};
-  }
-
-  :not(:last-of-type) {
-    margin-right: ${p => p.theme.space[3]}px;
   }
 `;

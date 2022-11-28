@@ -1,3 +1,4 @@
+export const containerWidth = ['100%', '100%', '768px', '1000px'];
 export const breakpoints = [480, 768, 1280];
 
 export const mq = {

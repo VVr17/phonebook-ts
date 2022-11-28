@@ -1,17 +1,20 @@
-import { Container, Header } from './AppBar.styled';
-// import { Navigation } from 'components/Navigation/Navigation';
+// import { Header } from './AppBar.styled';
+import { Navigation } from 'components/Navigation/Navigation';
+// import { Container } from 'components/Container/Container';
+import { Box } from 'components/Box/Box';
+import { Container } from './AppBar.styled';
 
 export const AppBar = () => {
   return (
-    <Header>
+    <Box
+      as="header"
+      py={[3, 3, 4, 4]}
+      px={[2, 2, 4, 6]}
+      bg="accentBackgroundColor"
+    >
       <Container>
-        <ul>
-          <li>home</li>
-          <li>contacts</li>
-          <li>add contacts</li>
-        </ul>
-        {/* <Navigation /> */}
+        <Navigation />
       </Container>
-    </Header>
+    </Box>
   );
 };

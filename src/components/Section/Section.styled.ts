@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mq } from 'constants/mediaConstants';
 
 export const Title = styled.h2`
   display: block;
@@ -8,11 +9,12 @@ export const Title = styled.h2`
   line-height: 1.18;
   letter-spacing: 0.05em;
   color: ${p => p.theme.colors.accentTextColor};
-`;
-/* ${p => p.theme.mediaQueries.medium} {
+
+  ${mq.medium} {
     font-size: ${p => p.theme.fontSizes.m};
   }
 
-  ${p => p.theme.mediaQueries.large} {
+  ${mq.large} {
     font-size: ${p => p.theme.fontSizes.l};
-  } */
+  }
+`;

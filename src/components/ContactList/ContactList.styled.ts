@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mq } from 'constants/mediaConstants';
 
 export const Contacts = styled.ul`
   list-style: none;
@@ -13,17 +14,11 @@ export const Contacts = styled.ul`
       margin-bottom: ${p => p.theme.space[2]}px;
     }
   }
-`;
-/* ${p => p.theme.mediaQueries.medium} {
-      padding: ${p => p.theme.space[3]}px;
-    }
+  ${mq.medium} {
+    padding: ${p => p.theme.space[3]}px;
+  }
 
-    ${p => p.theme.mediaQueries.large} {
-      padding: ${p => p.theme.space[4]}px;
-    } */
-
-export const Text = styled.p`
-  padding: ${p => p.theme.space[3]}px ${p => p.theme.space[0]}px;
-  font-size: ${p => p.theme.fontSizes.s};
-  font-weight: ${p => p.theme.fontWeight.semiBold};
+  ${mq.large} {
+    padding: ${p => p.theme.space[4]}px;
+  }
 `;

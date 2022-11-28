@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
-import { useForm } from 'react-hook-form'; // Forms
+import { useForm, SubmitHandler } from 'react-hook-form'; // Forms
 import { yupResolver } from '@hookform/resolvers/yup'; // for React-hook-form work with Yup
 import * as yup from 'yup'; // Form validation
 import { toast } from 'react-toastify'; // Notifications
 import { Button } from 'components/Button/Button';
 import { Input } from './Input/Input';
+import { IContact } from 'constants/interface';
 
 const INITIAL_STATE = {
   name: '',
@@ -30,7 +30,20 @@ const validationSchema = yup.object().shape({
     .required('Number is required'),
 });
 
-export const NewContactForm = ({ contacts, onFormSubmit }) => {
+interface FormValues {
+  name: string;
+  number: string;
+}
+
+interface IProps {
+  contacts: IContact[];
+  onFormSubmit: ({ name, number }: { name: string; number: string }) => void;
+}
+
+export const NewContactForm: React.FC<IProps> = ({
+  contacts,
+  onFormSubmit,
+}) => {
   const {
     register,
     handleSubmit,
@@ -41,7 +54,7 @@ export const NewContactForm = ({ contacts, onFormSubmit }) => {
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = data => {
+  const onSubmit: SubmitHandler<FormValues> = data => {
     const { name } = data;
 
     if (isInPhoneBook(name)) {
@@ -54,13 +67,12 @@ export const NewContactForm = ({ contacts, onFormSubmit }) => {
     reset();
   };
 
-  function isInPhoneBook(name) {
+  function isInPhoneBook(name: string) {
     const normalizedName = name.toLowerCase();
     return contacts.find(({ name }) => name.toLowerCase() === normalizedName);
   }
 
   return (
-    /* "handleSubmit" will validate inputs before invoking "onSubmit" */
     <form onSubmit={handleSubmit(onSubmit)}>
       <Input
         name="name"
@@ -80,20 +92,3 @@ export const NewContactForm = ({ contacts, onFormSubmit }) => {
     </form>
   );
 };
-
-NewContactForm.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.exact({
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
-    }).isRequired
-  ),
-  onFormSubmit: PropTypes.func.isRequired,
-};
-
-/* <label>
-  Name
-  <input type="text" placeholder="Name" {...register('name')} />
-  {errors.name && <p>{errors.name?.message}</p>}
-</label>  */
